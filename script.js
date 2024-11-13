@@ -35,10 +35,10 @@ vowelBtn.addEventListener("click", () => {
   }
 });
 
-let consonant = 0;
-
 consonantBtn.addEventListener("click", () => {
   let vowels = "aeiou";
+
+  let consonant = 0;
 
   let alphabet = text.value.toLowerCase();
 
@@ -49,11 +49,13 @@ consonantBtn.addEventListener("click", () => {
     output.innerText = "Please enter a text...";
     return;
   }
-  for (let i = 0; i < alphabet.length; i++) {
-    if (!vowels.includes(alphabet[i]) && alphabet[i].match(/[a-z]i/)) {
+
+  for (let i = 0; i <= alphabet.length; i++) {
+    if (!vowels.includes(alphabet[i]) && alphabet[i].match(/[a-z]/i)) {
       consonant++;
     }
 
+ 
     output.classList.add("success");
     output.textContent = `Consonants count ${consonant}`;
 
